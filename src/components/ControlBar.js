@@ -5,6 +5,7 @@ import {
   selectIsLocalAudioEnabled,
   selectIsLocalVideoEnabled
 } from "@100mslive/hms-video-react";
+import Time from './Time'
 
 const ControlBar = () => {
   const hmsActions = useHMSActions();
@@ -16,6 +17,7 @@ const ControlBar = () => {
   const toggleVideo = async () => {
     await hmsActions.setLocalVideoEnabled(!isLocalVideoEnabled);
   };
+
 
   return (
     <div className="fixed bottom-0 h-10 bg-gray-400 w-screen flex items-center justify-center">
@@ -31,6 +33,7 @@ const ControlBar = () => {
       >
         {isLocalVideoEnabled ? "Hide" : "Unhide"}
       </button>
+      <Time time={Date.now()} />
     </div>
   );
 };

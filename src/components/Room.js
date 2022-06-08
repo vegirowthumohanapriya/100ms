@@ -7,6 +7,7 @@ import {
 } from "@100mslive/hms-video-react";
 import ControlBar from "./ControlBar";
 
+
 const Room = () => {
   const localPeer = useHMSStore(selectLocalPeer);
   const peers = useHMSStore(selectPeers);
@@ -21,11 +22,14 @@ const Room = () => {
               return (
                 <>
                   <VideoTile isLocal={false} peer={peer} />
+                 
                 </>
               );
             })}
       </div>
+      
       <ControlBar />
+      
     </div>
   );
 };
